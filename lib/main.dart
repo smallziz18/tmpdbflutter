@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:tmpdbmoovieapp/providers/moovie_provider.dart';
 import 'package:tmpdbmoovieapp/screens/homescreen.dart';
 
 void main() {
-  runApp(const MyApp()); // Lancement de l'application Flutter
+  runApp(
+    // Fournir MoovieProvider à l'ensemble de l'application
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MoovieProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
