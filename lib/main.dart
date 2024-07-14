@@ -3,30 +3,30 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tmpdbmoovieapp/screens/homescreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); // Lancement de l'application Flutter
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'TMDB-Moovie-App',
-      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false, // Supprime le bandeau de débogage
+      title: 'TMDB-Moovie-App', // Titre de l'application
+      themeMode: ThemeMode.dark, // Mode de thème par défaut
       theme: ThemeData(
+        // Définition du thème de l'application
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.white, fontSize: 24),
-          bodyMedium: TextStyle(color: Colors.white, fontSize: 20),
+          bodyLarge: TextStyle(color: Colors.white, fontSize: 24), // Style du texte large
+          bodyMedium: TextStyle(color: Colors.white, fontSize: 20), // Style du texte moyen
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
-            .copyWith(surface: Colors.black),
-        fontFamily: GoogleFonts.ptSans().fontFamily,
-        useMaterial3: true,
+            .copyWith(surface: Colors.black), // Palette de couleurs basée sur une graine
+        fontFamily: GoogleFonts.ptSans().fontFamily, // Police de caractères personnalisée
+        useMaterial3: true, // Utilisation de Material Design 3
       ),
-      home: Homescreen(),
+      home: Homescreen(), // Définition de l'écran d'accueil
     );
   }
 }
